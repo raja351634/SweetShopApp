@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Sweet Shop Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+    <div th:if="${ not#lists.isEmpty(items)}">
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.description}"></td>
+                <td th:text="${#numbers.formatDecimal(item.price,3,2)}"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
