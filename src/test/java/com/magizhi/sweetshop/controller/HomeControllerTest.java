@@ -1,5 +1,7 @@
 package com.magizhi.sweetshop.controller;
 
+import com.magizhi.sweetshop.service.Catalog;
+import com.magizhi.sweetshop.service.DbCatalog;
 import com.magizhi.sweetshop.service.InMemoryCatalog;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,7 @@ class HomeControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    InMemoryCatalog inMemoryCatalog;
+    DbCatalog dbCatalog;
     @Test
     public void shouldHomeControllerReturn_IndexPage_withModel() throws Exception {
 

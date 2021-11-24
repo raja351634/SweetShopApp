@@ -1,10 +1,20 @@
 package com.magizhi.sweetshop.model;
 
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "Item")
 public class Item {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    private Long Id;
+    @Column
     private String description;
+    @Column
     private BigDecimal price;
 
     public Item() {
@@ -30,4 +40,13 @@ public class Item {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
 }
